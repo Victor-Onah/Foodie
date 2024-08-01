@@ -37,6 +37,10 @@ const handleSignIn = async form => {
 				return toast.warn(
 					"Wrong email or password. Check your inputs and try again."
 				);
+			else if (data === "ACCOUNT_INACTIVE")
+				return toast.error(
+					"You have not yet verified your account. Check your email for an verification email"
+				);
 		}
 	} catch (error) {
 		toast.error("An unknown error ocurred.");

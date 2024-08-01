@@ -1,4 +1,5 @@
 import Crypto from "../services/encryption-service.js";
+import MailingService from "../services/mailing-service.js";
 import User from "../services/user-service.js";
 
 const signInController = async (req, res) => {
@@ -14,7 +15,14 @@ const signInController = async (req, res) => {
 			if (!isPasswordCorrect)
 				return res.status(401).end("WRONG_CREDENTIALS");
 
-			if (!user.verified) return res.status(401).end("ACCOUNT_INACTIVE");
+			if (!user.verified)
+				return (
+					await MailingService.sendVerificationEmail({
+						email,
+						name: user.name
+					}),
+					res.status(401).end("ACCOUNT_INACTIVE")
+				);
 
 			const authToken = Crypto.encrypt(
 				JSON.stringify({ email, timeStamp: Date.now() })
