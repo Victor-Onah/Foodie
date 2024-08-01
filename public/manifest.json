@@ -1,0 +1,14 @@
+{
+	"short_name": "Foodie",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "orangered",
+	"theme_color": "orangered",
+	"icons": [
+		{
+			"src": "/assets/images/icon.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		}
+	]
+}

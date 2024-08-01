@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Account Verification</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				height: 100%;
+			}
+			body {
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				background-color: #f1f1f1;
+				font-size: 16px;
+			}
+			main {
+				max-width: 720px;
+				margin: auto;
+				background-color: white;
+				height: 100%;
+				padding: 1rem;
+			}
+			h1 {
+				font-weight: normal;
+				font-size: 2rem;
+				text-align: center;
+				line-height: 1.75;
+			}
+			p {
+				line-height: 1.5;
+				margin-bottom: 1.2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<img
+				src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3AHTML5_logo_and_wordmark.svg&psig=AOvVaw30viu1gq2LP4wNmEliqKQy&ust=1722326529975000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCID4_NDky4cDFQAAAAAdAAAAABAE"
+				style="display: block; width: fit-content; margin: 1rem auto" />
+			<h1 style="color: orangered">Verify Your Account</h1>
+			<p>
+				Hi <b><i>%USER_NAME%</i></b
+				>,
+			</p>
+			<p>Thank you for creating an account with us!</p>
+			<p>
+				To complete the registration process, please verify your account
+				by clicking the link below:
+			</p>
+			<p>
+				<a
+					style="font-size: 0.75rem; color: orangered"
+					href="%VERIFICATION_LINK%"
+					>%VERIFICATION_LINK%</a
+				>
+			</p>
+			<p>
+				If you didn't sign up for this account, you can ignore this
+				email.
+			</p>
+			<p>
+				<b>Best regards, Foodie<sup>&copy;</sup> Dev Team</b>
+			</p>
+		</main>
+	</body>
+</html>
