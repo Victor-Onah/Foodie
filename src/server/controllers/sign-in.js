@@ -10,7 +10,10 @@ const signInController = async (req, res) => {
 		if (!user) return res.status(404).end("USER_NOT_FOUND");
 		else {
 			const { password: savedPassword } = user;
-			const isPasswordCorrect = Crypto.compare(password, savedPassword);
+			const isPasswordCorrect = await Crypto.compare(
+				password,
+				savedPassword
+			);
 
 			if (!isPasswordCorrect)
 				return res.status(401).end("WRONG_CREDENTIALS");

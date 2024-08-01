@@ -1,3 +1,4 @@
+import Crypto from "../services/encryption-service.js";
 import MailingService from "../services/mailing-service.js";
 import User from "../services/user-service.js";
 
@@ -8,7 +9,11 @@ const signUpController = async (req, res) => {
 
 		if (userExists) return res.status(409).end("USER_EXISTS");
 		else {
-			await new User({ email, name, password }).save();
+			await new User({
+				email,
+				name,
+				password: await Crypto.hash(password)
+			}).save();
 
 			await MailingService.sendVerificationEmail({ email, name });
 

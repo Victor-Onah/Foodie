@@ -19,8 +19,9 @@ const accountVerificationController = async (req, res) => {
 
 		await user.save();
 
-		res.redirect("/login?activation_complete=true");
+		res.redirect("/sign-in?activation_complete=true");
 	} catch (error) {
+		console.error(error);
 		return res.status(403).send("FORBIDDEN");
 	}
 };
